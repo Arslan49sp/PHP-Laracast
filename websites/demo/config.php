@@ -7,4 +7,6 @@ return [
         'dbname' => 'notes_app_php',
         'charset' => 'utf8mb4'
     ],
+
+    //
 ];

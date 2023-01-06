@@ -1,5 +1,9 @@
 <?php
 
+namespace Core;
+
+use PDO;
+
 class Database
 {
     public $connection;
@@ -28,19 +32,19 @@ class Database
         return $this->statement->fetchAll();
     }
 
-    public function find()
-    {
-        return $this->statement->fetch();
-    }
-
     public function findOrFail()
     {
         $result = $this->find();
 
-        if (! $result) {
+        if (!$result) {
             abort();
         }
 
         return $result;
+    }
+
+    public function find()
+    {
+        return $this->statement->fetch();
     }
 }
